@@ -21,6 +21,8 @@ vi /etc/docker/daemon.json
 pkill -SIGHUP dockerd
 ```
 
+- Configure MIG : 
+
 - Add hosts in k8s GPU  cluster 
 
 - If device plugin / GPU feature discovery / Operator daemonsets is already there, you are done.
