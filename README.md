@@ -21,7 +21,7 @@ vi /etc/docker/daemon.json
 pkill -SIGHUP dockerd
 ```
 
-- Configure MIG : 
+- Configure MIG : https://github.com/jear/nvidia/blob/main/A100
 
 - Add hosts in k8s GPU  cluster 
 
