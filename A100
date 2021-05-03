@@ -95,34 +95,19 @@ All done.
                                        instance.
 
 
-[root@worker-gpu-7 ~]# nvidia-smi mig -i 0 -cgi 19
-Successfully created GPU instance ID 13 on GPU  0 using profile MIG 1g.5gb (ID 19)
+[root@worker-gpu-7 ~]# for i in {1..7}; do nvidia-smi mig -i 0 -cgi 19; done
 
-[root@worker-gpu-7 ~]# nvidia-smi mig -i 0 -lcip
-+--------------------------------------------------------------------------------------+
-| Compute instance profiles:                                                           |
-| GPU     GPU       Name             Profile  Instances   Exclusive       Shared       |
-|       Instance                       ID     Free/Total     SM       DEC   ENC   OFA  |
-|         ID                                                          CE    JPEG       |
-|======================================================================================|
-|   0     13       MIG 1g.5gb           0*     1/1           14        0     0     0   |
-|                                                                      1     0         |
-+--------------------------------------------------------------------------------------+
-[root@worker-gpu-7 ~]# nvidia-smi mig -i 0 -cgi 19
+Successfully created GPU instance ID 13 on GPU  0 using profile MIG 1g.5gb (ID 19)
 Successfully created GPU instance ID 11 on GPU  0 using profile MIG 1g.5gb (ID 19)
-[root@worker-gpu-7 ~]# nvidia-smi mig -i 0 -cgi 19
 Successfully created GPU instance ID 12 on GPU  0 using profile MIG 1g.5gb (ID 19)
-[root@worker-gpu-7 ~]# nvidia-smi mig -i 0 -cgi 19
 Successfully created GPU instance ID  7 on GPU  0 using profile MIG 1g.5gb (ID 19)
-[root@worker-gpu-7 ~]# nvidia-smi mig -i 0 -cgi 19
 Successfully created GPU instance ID  8 on GPU  0 using profile MIG 1g.5gb (ID 19)
-[root@worker-gpu-7 ~]# nvidia-smi mig -i 0 -cgi 19
 Successfully created GPU instance ID  9 on GPU  0 using profile MIG 1g.5gb (ID 19)
-[root@worker-gpu-7 ~]# nvidia-smi mig -i 0 -cgi 19
 Successfully created GPU instance ID 10 on GPU  0 using profile MIG 1g.5gb (ID 19)
-[root@worker-gpu-7 ~]# nvidia-smi mig -i 0 -cgi 19
-Unable to create a GPU instance on GPU  0 using profile 19: Insufficient Resources
-Failed to create GPU instances: Insufficient Resources
+
+
+
+
 [root@worker-gpu-7 ~]# nvidia-smi mig -i 0 -lcip
 +--------------------------------------------------------------------------------------+
 | Compute instance profiles:                                                           |
@@ -154,20 +139,8 @@ Failed to create GPU instances: Insufficient Resources
 
 
 # for each GPU Instance ID and profile ID
-[root@worker-gpu-7 ~]# nvidia-smi mig -gi 7 -cci 0\*
-Successfully created compute instance ID  0 on GPU  0 GPU instance ID  7 using profile MIG 1g.5gb (ID  0)
-[root@worker-gpu-7 ~]# nvidia-smi mig -gi 8 -cci 0\*
-Successfully created compute instance ID  0 on GPU  0 GPU instance ID  8 using profile MIG 1g.5gb (ID  0)
-[root@worker-gpu-7 ~]# nvidia-smi mig -gi 9 -cci 0\*
-Successfully created compute instance ID  0 on GPU  0 GPU instance ID  9 using profile MIG 1g.5gb (ID  0)
-[root@worker-gpu-7 ~]# nvidia-smi mig -gi 10 -cci 0\*
-Successfully created compute instance ID  0 on GPU  0 GPU instance ID 10 using profile MIG 1g.5gb (ID  0)
-[root@worker-gpu-7 ~]# nvidia-smi mig -gi 11 -cci 0\*
-Successfully created compute instance ID  0 on GPU  0 GPU instance ID 11 using profile MIG 1g.5gb (ID  0)
-[root@worker-gpu-7 ~]# nvidia-smi mig -gi 12 -cci 0\*
-Successfully created compute instance ID  0 on GPU  0 GPU instance ID 12 using profile MIG 1g.5gb (ID  0)
-[root@worker-gpu-7 ~]# nvidia-smi mig -gi 13 -cci 0\*
-Successfully created compute instance ID  0 on GPU  0 GPU instance ID 13 using profile MIG 1g.5gb (ID  0)
+[root@worker-gpu-7 ~]# for i in {7..13}; do nvidia-smi mig -gi $i -cci 0\* ; done
+
 
 
 # et zou
