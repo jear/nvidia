@@ -1,10 +1,10 @@
 #### A100 MIG
 
-    Install nvidia driver from runfile : https://github.com/jear/nvidia-centos/blob/master/install.txt
+- Install nvidia driver from runfile : https://github.com/jear/nvidia-centos/blob/master/install.txt
  
-    Install toolkit : https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#installing-on-centos-7-8
+- Install toolkit : https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#installing-on-centos-7-8
 
-    Update 
+- Update 
 ```
 vi /etc/docker/daemon.json
 
@@ -21,6 +21,6 @@ vi /etc/docker/daemon.json
 pkill -SIGHUP dockerd
 ```
 
-## Add hosts in k8s GPU  cluster 
+- Add hosts in k8s GPU  cluster 
 
-## If device plugin / GPU feature discovery / Operator daemonsets is already there, you are done.
+- If device plugin / GPU feature discovery / Operator daemonsets is already there, you are done.
