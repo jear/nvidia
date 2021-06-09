@@ -1,3 +1,5 @@
+https://www.youtube.com/watch?v=xNY9cbaLuGk
+
 https://github.com/NVIDIA/mig-parted
 
 nvidia-mig-parted export
@@ -22,8 +24,19 @@ helm install \
   gpu-feature-discovery \
   nvgfd/gpu-feature-discovery
 
+helm list
+k get nodes -o json | jq '.items[0].status.allocatable | with_entries(select(.key | contains("nvidia")))'
+k get nodes -o json | jq '.items[0].metadata.labels | with_entries(select(.key | contains("nvidia")))'
+
+kubectl run -it --rm \
+  --image=nvidia/cuda:11.0-base \
+  --restart=Never \
+  --limits=nvidia.com/gpu=1 \
+  gpu-pod -- nvidia-smi -L
 
 
+
+####################################################################
 [root@worker-gpu-7 ~]# nvidia-smi mig -lgip
 No MIG-enabled devices found.
 
