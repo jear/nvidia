@@ -1,4 +1,8 @@
- [root@worker-gpu-7 ~]# nvidia-smi mig -lgip
+https://github.com/NVIDIA/mig-parted
+
+
+
+[root@worker-gpu-7 ~]# nvidia-smi mig -lgip
 No MIG-enabled devices found.
 
 # Enable MIG
@@ -7,6 +11,8 @@ Enabled MIG Mode for GPU 00000000:61:00.0
 
 Warning: persistence mode is disabled on device 00000000:61:00.0. See the Known Issues section of the nvidia-smi(1) man page for more information. Run with [--help | -h] switch to get more information on how to enable persistence mode.
 All done.
+
+
 
 
 # Reset
@@ -38,6 +44,9 @@ All done.
 +--------------------------------------------------------------------------+
 
 
+nvidia-smi mig  -cgi 19,19,19,19,19,19,19 -C
+
+nvidia-smi mig  -cgi 14,14,14 -C
 
 
 [root@worker-gpu-7 ~]# for i in {1..7}; do nvidia-smi mig -i 0 -cgi 19; done
