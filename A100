@@ -1,6 +1,7 @@
 https://www.youtube.com/watch?v=xNY9cbaLuGk
 
 https://github.com/NVIDIA/mig-parted
+docs.nvidia.com/datacenter/cloud-native/kubernetes/mig-k8s.htm
 # Install Go ... 
 
 nvidia-mig-parted export
