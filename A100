@@ -1,5 +1,14 @@
 https://github.com/NVIDIA/mig-parted
 
+nvidia-mig-parted export
+nvidia-smi -L
+dpkg -l | grep nvidia-container; dpkg -l | grep nvidia-docker 
+cat /etc/docker/daemon.json
+k get nodes -o json | jq .items[0].status.allocatable
+
+helm repo add nvdp https://nvidia.github.io/k8s-device-plugin
+helm repo add nvgfd https://nvidia.github.io/gpu-feature-discovery
+helm repo update
 
 
 [root@worker-gpu-7 ~]# nvidia-smi mig -lgip
