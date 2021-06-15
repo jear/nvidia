@@ -21,7 +21,9 @@ vi /etc/docker/daemon.json
 pkill -SIGHUP dockerd
 ```
 
-- Configure MIG : https://github.com/jear/nvidia/blob/main/A100
+- Configure MIG without Slurm or k8s: https://github.com/jear/nvidia/blob/main/A100
+
+- For k8s, look here : https://github.com/jear/nvidia/blob/main/A100-k8s
 
 - Add hosts in k8s GPU  cluster 
 
