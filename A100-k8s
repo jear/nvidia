@@ -27,6 +27,9 @@ helm install \
   nvgfd/gpu-feature-discovery
 
 helm list
+
+k get node -o json | jq '.items[].metadata.labels'
+
 k get nodes -o json | jq '.items[0].status.allocatable | with_entries(select(.key | contains("nvidia")))'
 k get nodes -o json | jq '.items[0].metadata.labels | with_entries(select(.key | contains("nvidia")))'
 
@@ -66,6 +69,8 @@ helm install \
   --set migStrategy=single \
   gpu-feature-discovery \
   nvgfd/gpu-feature-discovery
+
+k get node -o json | jq '.items[].metadata.labels'
 
 k get nodes -o json | jq '.items[0].status.allocatable | with_entries(select(.key | contains("nvidia")))'
 k get nodes -o json | jq '.items[0].metadata.labels | with_entries(select(.key | contains("nvidia")))'
